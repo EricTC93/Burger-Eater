@@ -16,11 +16,11 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
-connection.query("SELECT * FROM burgers", function(err, res) {
-    if (err) throw err;
+// connection.query("SELECT * FROM burgers", function(err, res) {
+//     if (err) throw err;
 
-    console.log(res);
-});
+//     console.log(res);
+// });
 
 // Export connection
 module.exports = connection;
