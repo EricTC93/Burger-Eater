@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/YETC7/Burger-Eater#readme",
   "dependencies": {
+    "express": "^4.15.4",
     "mysql": "^2.14.1"
   }
 }
