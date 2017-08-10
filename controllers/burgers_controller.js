@@ -16,18 +16,23 @@ router.get("/",function(req,res) {
 
 // Adds a new burger to the page and the database
 router.post("/",function(req,res) {
-	burger.insertOne({
-		burger_name:req.body.burger_name
-	}, function(res) {
-		res.redirect("/");
-	});
+
+	if (req.body.burger_name !== "") {
+
+		burger.insertOne({
+			burger_name:req.body.burger_name
+		}, function() {
+			res.redirect("/");
+		});
+
+	}
 });
 
 // Changes a burger property devoured to true
 router.put("/:id", function(req,res) {
 	burger.updateOne({
 		devoured:1},
-	req.params.id, function(res) {
+	req.params.id, function() {
 		res.redirect("/");
 	});
 });
